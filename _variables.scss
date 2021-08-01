@@ -1,0 +1,43 @@
+@mixin breakpoint($point){
+    @if $point == bg{
+        @media (max-width: 1230px) {
+            @content;
+        }
+    }
+    @else if $point == cl{
+        @media (max-width:1160px) {
+            @content;
+        }
+    }
+    @else if $point == lg{
+        @media (max-width:992px) {
+            @content;
+        }
+    }
+    @else if $point == md{
+        @media (max-width:768px) {
+            @content;
+        }
+    }
+    @else if $point == a{
+        @media (max-width:678px) {
+            @content;
+        }
+    }
+    @else if $point == b{
+        @media (max-width:567px) {
+            @content;
+        }
+    }
+    @else if $point == c{
+        @media (max-width:370px) {
+            @content;
+        }
+    }
+    @else if $point == oo{
+        @media (max-width:1500px) {
+            @content;
+        }
+    }
+}
+

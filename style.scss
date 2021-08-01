@@ -1,0 +1,1868 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap');
+@import 'variables';
+$orange: #FF5E14;
+$blue: #008AC6;
+$hr:#FF6F53;
+*{box-sizing: border-box;}
+
+body{
+    font-family: 'PT Sans Caption', sans-serif;
+}
+
+
+.wrapper{
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.none{
+    margin-top: -500%;
+    transition: 0.8s;
+}
+
+.over{
+    overflow: hidden;
+}
+
+.block{
+    margin-top: 0;
+    transition: 0.8s;
+}
+
+.hr{
+    color: $hr;
+}
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header{
+    &-menu{
+        &-item{
+            margin-bottom: 50px;
+            
+            @include breakpoint(b){
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+        &-link{
+            font-size: 30px;
+            font-weight: 900;
+            color: #001659;
+            transition: 0.3s;
+            text-transform: uppercase;
+            @include breakpoint(lg){
+                font-size: 24px;
+            }
+            @include breakpoint(md){
+                font-size: 20px;
+            }
+        }
+        &-link:hover{
+            text-decoration: none;
+            color: $orange;
+        }
+    }
+    &-close{
+        text-align: center;
+        cursor: pointer;
+        height: 50px;
+        margin-bottom: 0;
+        &-span{
+            cursor: pointer;
+            position: relative;
+            border-radius: 18px;
+            top: 30px;
+            display: inline-block;
+            position: fixed;
+            background-color: $orange;
+            height: 4px;
+            width: 40px;
+        }
+        &-span:nth-child(1){
+            transform: rotate(45deg);
+        }
+        &-span:nth-child(2){
+            transform: rotate(-45deg);
+            width: 30px;
+    margin-left: 7px;
+    position: relative;
+    top: 13px;
+        }
+    }
+    &-click{
+        overflow: hidden;
+        height: 100%;
+    }
+    &-block{
+        flex: 0 0 33%;
+        text-align: center;
+        height: 40px;
+        cursor: pointer;
+        @include breakpoint(lg){
+            flex: none;
+        }
+        
+    }
+    &-span{
+        position: absolute;
+        left: 50%;
+        @include breakpoint(lg){
+            left: auto;
+            right: 15px;
+        }
+        
+        transform: rotate(0deg);
+        height: 4px;
+        background-color: #fff;
+        border-radius: 12px;
+        transition-duration: .4s;
+        cursor: pointer;
+    }
+    &-span:nth-child(1){
+        width: 50px;
+        top: 16px;
+    }
+    &-span:nth-child(2){
+        width: 32px;
+        margin-left: 17px;
+        top: 30px;
+    }
+    &-span:nth-child(3){
+        width: 44px;
+        top: 45px;
+        margin-left: 6px;
+    }
+    &-item{
+        flex: 0 0 50%;
+        padding-left: 0;
+        @include breakpoint(b){
+            flex: 0 0 100%;
+        }
+    }
+    &-flex{
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        @include breakpoint(b){
+            flex-wrap: wrap;
+        }
+    }
+    &-nav{
+        z-index: 9999;
+        position: fixed;
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        @include breakpoint(b){
+            overflow: auto;
+        }
+    }
+    &-bg{
+        background-color: rgba(0, 0, 0, 0.63);
+        padding: 20px 0;
+        transition: 0.2s ease-out;
+    }
+    transition: 0.2s ease-out;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include breakpoint(lg){
+            flex-wrap: wrap;
+        }
+    }
+    &-logo{
+        flex: 0 0 33%;
+        display: flex;
+        align-items: center;
+        @include breakpoint(lg){
+            flex: none;
+            padding: 15px 0;
+        }
+        &-img{
+            @include breakpoint(b){
+                width: 70px;
+            }
+        }
+        
+        &-text{
+            margin: 0;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 18px;
+            margin-left: 7px;
+            @include breakpoint(b){
+                font-size: 24px;
+            }
+        }
+        &-text span{
+            font-weight: 900;
+        }
+    }
+    &-btn{
+        background-color: $orange;
+        padding: 17px 11px;
+        color: #fff;
+        display: block;
+        font-size: 18px;
+        
+    }
+    &-btn:hover{
+        text-decoration: none;
+        background-color: #ec5813;
+        color: #fff;
+    }
+    &-btn2{
+        @include breakpoint(lg){
+            flex: 0 0 100%;
+            text-align: center;
+        }
+        flex: 1 1 33%;
+        text-align: right;
+    }
+}
+
+.slider{
+    &-img{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &-1{
+            background-image: url('../img/bg-main-1.jpg');
+        }
+        &-2{
+            background-image: url('../img/bg-main-2.jpg');
+        }
+        &-3{
+            background-image: url('../img/bg-main-3.jpg');
+        }
+    }
+    &-info{
+        display: flex;
+        justify-content: center;
+        margin-top: 330px;
+        align-items: center;
+        line-height: 100px;
+        padding: 0 15px;
+        @include breakpoint(lg){
+            flex-wrap: wrap;
+        }
+    }
+    &-title{
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &-title:nth-child(1){
+       font-size: 50px;
+       font-weight: 700;
+       line-height: 50px;
+       margin: 0;
+       text-align: right;
+    @include breakpoint(lg){
+        font-size: 30px;
+        line-height: 30px;
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    }
+    &-title:nth-child(2){
+        font-size: 115px;
+        margin: 0;
+        font-weight: 700;
+        margin-left: 22px;
+        margin-bottom: 0;
+        @include breakpoint(lg){
+            font-size: 65px;
+            margin-left: 5px;
+            line-height: 67px;
+            flex: 0 0 100%;
+            text-align: center;
+        }       
+    }
+    &-title:nth-child(1) br{
+        @include breakpoint(lg){
+            display: none;
+        }
+    }
+    &-desc{
+        padding: 0 15px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 314px;
+        @include breakpoint(lg){
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+}
+
+.one{
+    padding: 64px 0;
+    @include breakpoint(md){
+        padding: 5px 0;
+    }
+    &-title{
+        color: $blue;
+        text-transform: uppercase;
+        font-size: 48px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 0;
+    @include breakpoint(cl){
+        font-size: 45px;
+        line-height: 48px;
+    }
+    }
+    &-desc{
+        font-size: 24px;
+        margin: 50px 0;
+        @include breakpoint(cl){
+            font-size: 20px;
+            margin: 25px 0;
+        }
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint(md){
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    &-item{
+        border-bottom: 2px solid #ff6f53;
+        flex: 0 0 18%;
+        text-align: center;
+        @include breakpoint(md){
+            flex: 0 0 40%;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+         @include breakpoint(b){
+            flex: 0 0 90%;
+            margin-bottom: 30px;
+            margin-right: 0;
+            text-align: center;
+        }
+        &-text{
+            font-size: 18px;
+            margin: 30px 0;
+            text-align: left;
+            @include breakpoint(md){
+                text-align: center;
+            }
+        }
+    }
+    &-img{
+        max-width: 100%;
+        width: 100%;
+    }
+    &-hr{
+        max-width: 100%;   
+        border: 2px solid $hr;
+    }
+    &-bottom{
+        font-size: 36px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 30px;
+        @include breakpoint(cl){
+            font-size: 32px;
+            line-height: 30px;
+        }
+    }
+    &-btn{
+        background-color: $orange;
+        padding: 25px 50px;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        margin: 10px auto;
+        font-size: 20px;
+        box-shadow: 0px 10px 13px rgba(255, 94, 20, 0.5);
+        margin-top: 70px;
+        transition: 0.4s;
+        @include breakpoint(md){
+            padding: 15px 40px;
+            margin-top: 20px;
+        }
+    }
+    &-btn:hover{
+        box-shadow: 0px 10px 13px rgba(255, 94, 20, 0.1);
+        color: #fff;
+        text-decoration: none;
+    }
+    &-center{
+        text-align: center;
+    }
+}
+
+.orange{
+    color: $orange;
+}
+
+.blue{
+    color: $blue;
+}
+
+.weight{
+    font-weight: 700;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.center{
+    text-align: center;
+}
+
+.mb{
+    margin-bottom: 70px;
+    @include breakpoint(b){
+        margin-bottom: 40px;
+    }
+}
+
+.time{
+    background-image: url('../img/bg-time.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 890px;
+    padding: 105px 0;
+    
+    @include breakpoint(bg){
+        background-image: url('../img/bg-quest.jpg');
+        background-repeat: repeat;
+    }
+    @include breakpoint(a){
+        padding: 40px 0;
+    }
+    @include breakpoint(b){
+        padding: 25px 0;
+    }
+    &-wrapper{
+        max-width: 1280px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    &-title:nth-child(1){
+        font-size: 50px;
+        font-weight: 700;
+        color: $blue;
+        text-transform: uppercase;
+        @include breakpoint(bg){
+            text-align: center;
+        }
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-title:nth-child(2){
+        font-size: 90px;
+        font-weight: 700;
+        color: $orange;
+        text-transform: uppercase;
+        @include breakpoint(cl){
+            font-size: 50px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-desc{
+        font-size: 20px;
+        margin-bottom: 80px;
+
+        @include breakpoint(b){
+            
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        @include breakpoint(bg){
+            text-align: center;
+        }
+
+    }
+    &-desc br{
+        @include breakpoint(cl){
+            display: none;
+        }
+    }
+    &-blue{
+        max-width: 1280px;
+        padding: 0 15px;
+        margin: 0 auto;
+        margin-bottom: 90px;
+        @include breakpoint(bg){
+            padding: 0;
+        }
+        @include breakpoint(a){
+            margin-bottom: 20px;
+        }
+        @include breakpoint(bg){
+            text-align: center;
+        }
+    }
+    
+    &-out{
+        color: #fff;
+        font-size: 20px;
+        margin-top: 30px;
+        @include breakpoint(bg){
+            background-color: #001659;
+            padding: 25px 15px;
+            text-align: center;
+        }
+    }
+    &-out br{
+        @include breakpoint(b){
+            display: none;
+        }
+    }
+    &-bottom{
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: -80px;
+        @include breakpoint(md){
+            font-size: 28px;
+            line-height: 30px;
+        }
+        @include breakpoint(a){
+            margin-bottom: 0;
+            font-size: 22px;
+            text-align: center;
+            line-height: 24px;
+        }
+    }
+}
+
+.zabor{
+    background-image: url('../img/bg-items.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 70px 0;
+    @include breakpoint(md){
+        padding: 30px 0;
+    }
+    &-title{
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 47px;
+        text-align: center;
+        color: #fff;
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-title br{
+        @include breakpoint(cl){
+            display: none;
+        }
+    }
+    &-desc{
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        @include breakpoint(b){
+            margin-top: 0;
+        }
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        @include breakpoint(lg){
+            flex-wrap: wrap;
+        }
+    }
+    &-item{
+        @include breakpoint(lg){
+            flex: 0 0 30%;
+            margin-bottom: 50px;
+        }
+        @include breakpoint(md){
+            flex: 0 0 45%;
+        }
+        flex: 0 0 10%;
+        color: #fff;
+        border-bottom: 4px solid $orange;
+        &-text{
+            margin: 22px 0;
+            @include breakpoint(md){
+                font-size: 20px;
+            }
+        }
+    }
+    &-bottom{
+        font-weight: 700;
+        font-size: 30px;
+        text-align: center;
+        color: #fff;
+        @include breakpoint(md){
+            font-size: 28px;
+            line-height: 30px;
+        }
+    }
+}
+
+.itog{
+    background-image: url('../img/bg-itog.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 75px 0;
+    @include breakpoint(bg){
+        background-image: url('../img/bg-quest.jpg');
+    }
+    @include breakpoint(md){
+        padding: 30px 0;
+    }
+    &-title{
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 50px;
+        
+    }
+    &-title:nth-child(1){
+        font-size: 50px;
+        font-weight: 700;
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-title:nth-child(2){
+        font-size: 36px;
+        font-weight: 700;
+        @include breakpoint(cl){
+            font-size: 32px;
+            text-align: center;
+            line-height: 35px;
+        }
+    }
+    &-desc{
+        font-size: 26px;
+        margin-top: 56px;
+        margin-bottom: 150px;
+        @include breakpoint(cl){
+            font-size: 20px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+    &-desc br{
+        @include breakpoint(b){
+            display: none;
+        }
+    }
+    &-flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+        max-width: 1230px;
+        margin: 0 auto;
+        @include breakpoint(bg){
+            background-color: #001659;
+            padding: 20px 15px;
+            flex-wrap: wrap;
+        }
+    }
+    &-item{
+        flex: 0 0 24%;
+        color: #fff;
+        
+        @include breakpoint(bg){
+            flex: 0 0 49%;
+            text-align: center;
+        }
+        @include breakpoint(b){
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+        }
+        &-title:nth-child(1){
+            font-weight: 700;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            line-height: 40px;
+        }
+        &-title:nth-child(2){
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 0;
+
+        }
+        &-text{
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0;
+            @include breakpoint(md){
+                font-size: 18px;
+            }
+        }
+        &-price{
+            margin-top: 0;
+            font-weight: 700;
+            font-size: 60px;
+            text-align: center;
+            @include breakpoint(cl){
+                font-size: 48px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.why{
+    &-title{
+        font-weight: 700;
+        font-size: 50px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 50px;
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        @include breakpoint(md){
+            flex-wrap: wrap;
+        }
+    }
+    &-item{
+        flex: 0 0 19%;
+        @include breakpoint(md){
+            flex: 0 0 100%;
+            text-align: center;
+        }
+        &-text:nth-child(1){
+            font-size: 70px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+        &-text:nth-child(2){
+            font-size: 28px;
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+
+        }
+        &-text:nth-child(3){
+            font-size: 20px;
+    
+        }
+    }
+    &-bottom{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+        text-transform: uppercase;
+        margin-top: 65px;
+        text-align: center;
+        @include breakpoint(md){
+            font-size: 28px;
+            line-height: 30px;
+        }
+        @include breakpoint(a){
+            margin-bottom: 40px;
+            margin-top: 40px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 24px;
+        }
+    }
+}
+
+.what{
+    padding-top: 20px;
+    background-image: url('../img/bg-buy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @include breakpoint(cl){
+        background-color: #001659;
+        background-image: none;
+    }
+    &-title{
+        font-size: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 250px;
+        @include breakpoint(cl){
+            margin-bottom: 30px;
+        }
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        @include breakpoint(cl){
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        margin-top: 50px;
+        &-two{
+            display: flex;
+            justify-content: flex-end;
+            align-items: baseline;
+            @include breakpoint(cl){
+                justify-content: space-between;
+                flex-wrap: wrap;
+                text-align: center;
+            }
+        }
+    }
+    &-img{
+        margin-bottom: 30px;
+    }
+    &-item{
+        flex: 0 0 23%;
+        color: #fff;
+        @include breakpoint(cl){
+            flex: 0 0 100%;
+        }
+        &-title{
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            @include breakpoint(cl){
+                font-size: 28px;
+            }
+        }
+        &-desc{
+            font-size: 20px;
+
+        }
+    }
+    &-bottom{
+        font-size: 50px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 50px;
+        text-align: center;
+        margin-top: 40px;
+        @include breakpoint(cl){
+            font-size: 30px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-pos{
+        position: relative;
+        top: 50px;
+        @include breakpoint(a){
+            top: 35px;
+        }
+    }
+}
+
+.con{
+    padding-top: 70px;
+    @include breakpoint(md){
+        padding-top: 30px;
+    }
+    &-title{
+        font-size: 50px;
+        font-weight: 700;
+        color: $blue;
+        text-align: center;
+        @include breakpoint(cl){
+            margin-bottom: 30px;
+        }
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-desc{
+        font-size: 20px;
+        max-width: 810px;
+        display: block;
+        margin: 0 auto;
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 350px;
+        margin-bottom: 40px;
+        @include breakpoint(md){
+            flex-wrap: wrap;
+            padding-top: 270px;
+        }
+    }
+    &-bg{
+        background-image: url('../img/bg-zabor.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+        padding-bottom: 130px;
+        @include breakpoint(md){
+            background-size: auto 100%;
+        }
+    }
+    &-item{
+        color: #fff;
+        font-size: 20px;
+        flex: 0 0 19%;
+        @include breakpoint(md){
+            flex: 0 0 100%;
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+    }
+    &-bottom{
+        font-weight: 700;
+        font-size: 40px;
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 40px;
+        @include breakpoint(md){
+            font-size: 32px;
+            line-height: 30px;
+
+        }
+    }
+    &-bottom br{
+        @include breakpoint(md){
+            display: none;
+        }
+    }
+}
+
+.help{
+    padding: 70px 0;
+    @include breakpoint(a){
+        padding: 30px 0;
+    }
+    &-title{
+        font-size: 50px;
+        color: $blue;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-desc{
+        font-size: 20px;
+        font-weight: 700;
+        display: block;
+        max-width: 1043px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+    &-desc br{
+        @include breakpoint(md){
+            display: none;
+        }
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        @include breakpoint(lg){
+            flex-wrap: wrap;
+        }
+    }
+    &-img{
+        margin-bottom: 20px;
+    }
+    &-item{
+        @include breakpoint(lg){
+            flex: 0 0 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        flex: 0 0 24%;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &-bottom{
+        font-size: 16px;
+        text-align: center;
+        margin-top: 55px;
+        margin-bottom: 30px;
+    }
+}
+
+.form{
+    background-image: url('../img/bg-form.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 70px 0;
+    &-title{
+        color: #fff;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 50px;
+        margin-bottom: 40px;
+        @include breakpoint(cl){
+            font-size: 41px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        @include breakpoint(lg){
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+    }
+    &-flex input{
+        @include breakpoint(lg){
+            margin-top: 20px;
+        }
+    }
+    &-inp{
+        @include breakpoint(lg){
+            flex: 0 0 100%;
+        }
+        flex: 0 0 49%;
+        padding: 25px;
+        background-color: #fff;
+        outline: none;
+        @include breakpoint(md){
+            font-size: 16px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    }
+    &-btn{
+        background-color: $orange;
+        padding: 25px;
+        flex: 0 0 49%;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        filter: drop-shadow(0px 10px 13px rgba(255, 94, 20, 0.5));
+        @include breakpoint(lg){
+            flex: 0 0 100%;
+        }
+        @include breakpoint(md){
+            font-size: 16px;
+            padding: 15px 40px;
+            margin-top: 20px;
+        }
+    }
+    &-btn:hover{
+        filter: drop-shadow(0px 10px 13px rgba(255, 94, 20, 0.1));
+    }
+}
+.modal{
+    &-inp{
+        width: 100%;
+        padding: 25px;
+        background-color: #fff;
+        outline: none;
+        margin-bottom: 20px;
+    }
+    &-btn{
+        background-color: $orange;
+        padding: 25px;
+       width: 100%;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        filter: drop-shadow(0px 10px 13px rgba(255, 94, 20, 0.5));
+    }
+    &-btn:hover{
+        filter: drop-shadow(0px 10px 13px rgba(255, 94, 20, 0.1));
+    }
+}
+.back_to_top {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    z-index: 999999999;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 2px;
+    display: none;
+  }
+  
+  .back_to_top-show {
+    display: block;
+  }
+
+.att{
+    background-image: url('../img/bg-attention.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 70px 0;
+    @include breakpoint(md){
+        font-size: 16px;
+        padding: 30px 0;
+    }
+    &-title{
+        font-size: 46px;
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 55px;
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-desc:nth-child(1){
+        font-size: 20px;
+        margin-bottom: 55px;
+    }
+    &-desc:nth-child(2){
+        font-weight: 700;
+        font-size: 20px;
+    }
+    &-bottom{
+        font-size: 46px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 75px;
+        @include breakpoint(a){
+            font-size: 32px;
+            text-align: center;
+            line-height: 32px;
+            margin-top: 40px;
+        }
+    }
+    &-flex{
+        display: flex;
+        justify-content: flex-end;
+        @include breakpoint(md){
+            justify-content: center;
+        }
+    }
+    &-item{
+        flex: 0 0 50%;
+        @include breakpoint(md){
+            flex: 0 0 100%;
+            text-align: center;
+        }
+    }
+}
+
+.if{
+    background-image: url('../img/bg-after-attention.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 70px 0;
+    @include breakpoint(b){
+        padding: 30px 0;
+    }
+    &-title{
+        font-size: 40px;
+        line-height: 44px;
+        text-align: center;
+        color: #fff;
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+        @include breakpoint(lg){
+            flex-wrap: wrap;
+        }
+    }
+    &-item{
+        @include breakpoint(lg){
+            flex: 0 0 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        border-bottom: 4px solid $orange;
+        flex: 0 0 33%;
+        &-text{
+            font-size: 20px;
+            color: #fff;
+            padding: 30px 0;
+        }
+    }
+    &-bottom{
+        font-size: 20px;
+        margin-top: 55px;
+        color: #fff;
+        text-align: center;
+        @include breakpoint(md){
+            font-size: 24px;
+            margin: 20px 0;
+        }
+    }
+}
+
+/* Стиль кнопок, которые используются для открытия и закрытия панели аккордеона */
+.accordion {
+    background-color: rgba(238, 238, 238, 0);
+    border: none;
+    border-bottom: 4px solid #001659;
+    opacity: 70%;
+    outline: none;
+    color: #001659;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 18px 100px;
+    width: 100%;
+    text-align: left;
+    transition: 0.4s;
+    @include breakpoint(a){
+        font-size: 26px;
+        line-height: 32px;
+        padding: 5px 15px;
+    }
+    @include breakpoint(b){
+        font-size: 20px;
+        line-height: 18px;
+        margin-bottom: 30px;
+    }
+  }
+
+  .accordion:last-of-type{
+      border: none
+  }
+  
+  /* Добавить цвет фона для кнопки, если она нажата (добавить .активный класс с JS), а при наведении на него курсора мыши (наведите курсор) */
+  .active, .accordion:hover {
+    outline: none;
+  }
+  
+.wrapper2{
+    max-width: 1270px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+  /* Стиль аккордеон панели. Примечание: скрыто по умолчанию */
+  .panel {
+    padding: 0 18px;
+    outline: none;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .accordion:after {
+    content: url('../img/plus.svg'); /* Символ юникода для "плюса" знак (+) */
+    font-size: 15px;
+    color: #001659;
+    float: right;
+    margin-top: 15px;
+    margin-left: 5px;
+    @include breakpoint(a){
+        margin-top: 10px;
+    }
+
+    
+  }
+  
+  .active:after {
+    content: url('../img/minus.svg'); /* Символ юникода для "минуса" знак (-) */
+  }
+
+button{
+    outline: none;
+}
+
+  .quest{
+      padding: 70px 0;
+    @include breakpoint(a){
+        padding: 30px 0;
+    }
+      &-content{
+          padding-top: 40px;
+          padding-bottom: 120px;
+        background-image: url('../img/bg-quest.jpg');
+        background-size: 75% 100%;
+        background-position: right;
+        background-repeat: no-repeat;
+        @include breakpoint(a){
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+      }
+      &-title{
+          text-align: center;
+          font-size: 48px;
+          font-weight: 700;
+          line-height: 55px;
+          margin-bottom: 60px;
+          @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+      }
+      &-text{
+          padding-top: 20px;
+      }
+  }
+
+  .garant{
+    padding: 70px 0;
+    background-image: url('../img/bg-garant.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    @include breakpoint(bg){
+        background-image: url('../img/arant-mobile.jpg');
+    }
+    @include breakpoint(b){
+        padding: 30px 0;
+    }
+      &-content{
+          display: flex;
+          justify-content: flex-end;
+        @include breakpoint(bg){
+            justify-content: center;
+        }
+      }
+      &-item{
+          flex: 0 0 42%;
+        @include breakpoint(bg){
+            flex: 0 0 100%;
+        }
+      }
+      &-text{
+          font-size: 20px;
+      }
+      &-text:nth-child(1){
+          position: relative;
+          bottom: 60px;
+          left: 20px;
+        @include breakpoint(bg){
+            color: #fff;
+            position: static;
+        }
+      }
+      &-text:nth-child(2){
+          position: relative;
+          bottom: 40px;
+          color: #fff;
+          left: 20px;
+          @include breakpoint(bg){
+            color: #fff;
+            position: static;
+        }
+      }
+      &-text:nth-child(3){
+          position: relative;
+          bottom: 40px;
+          color: #fff;
+          left: 20px;
+          @include breakpoint(bg){
+            color: #fff;
+            position: static;
+        }
+        }
+      &-text:nth-child(4){
+          position: relative;
+          bottom: 10px;
+          color: #fff;
+          left: 20px;
+          @include breakpoint(bg){
+            color: #fff;
+            position: static;
+        }
+        }
+      &-text:nth-child(5){
+        position: relative;
+        left: 20px;
+        @include breakpoint(bg){
+            color: #fff;
+            position: static;
+        }  
+    }
+      &-title{
+          font-size: 50px;
+          text-align: center;
+          font-weight: 700;
+          margin-bottom: 0;
+          text-transform: uppercase;
+          @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+      
+      }
+      &-desc{
+          margin-top: 0;
+          text-align: center;
+          margin-bottom: 70px;
+        font-size: 20px;
+      }
+      
+  }
+
+  .f{
+      color: #fff;
+  }
+
+  .m{
+      position: relative;
+      bottom: 15px;
+  }
+
+  .send{
+      background-image: url('../img/bg-orange.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding: 50px 0;
+    @include breakpoint(lg){
+        background-color: $orange;
+        background-image: none;
+    }
+      &-title{
+          font-size: 50px;
+          font-weight: 700;
+          text-align: center;
+          line-height: 65px;
+          margin-bottom: 0;
+        @include breakpoint(bg){
+            margin-top: 30px;
+        }
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+      }
+      &-desc{
+          font-size: 28px;
+          font-weight: 700;
+          text-align: center;
+          margin-top: 0;
+          margin-bottom: 50px;
+        @include breakpoint(md){
+            font-size: 20px;
+            
+        }
+      }
+      &-content{
+          display: flex;
+          justify-content: space-between;
+        @include breakpoint(lg){
+            flex-wrap: wrap;
+        }
+      }
+      &-form{
+          flex: 0 0 60%;
+        @include breakpoint(lg){
+            flex: 0 0 100%;
+        }
+          &-title{
+              font-size: 40px;
+              font-weight: 700;
+              color: #fff;
+              margin-bottom: 45px;
+              @include breakpoint(cl){
+                font-size: 45px;
+                line-height: 48px;
+                text-align: center;
+            }
+    
+          }
+      }
+      &-inp{
+        @include breakpoint(lg){
+            width: 100%;
+        }
+        @include breakpoint(md){
+            font-size: 16px;
+            padding: 15px;
+        }
+          width: 90%;
+          margin-bottom: 15px;
+          padding: 24px;
+          background-color: #F24C00;
+          color: #fff;
+          outline: none;
+          border: none;
+          &-cut{
+            @include breakpoint(md){
+                font-size: 16px;
+                padding: 15px;
+            }
+              flex: 0 0 44%;
+              @include breakpoint(lg){
+                flex: 0 0 49%;
+            }
+            @include breakpoint(a){
+                flex: 0 0 100%;
+                margin-bottom: 20px;
+            }
+              padding: 24px;
+              background-color: #F24C00;
+              color: #fff;
+              outline: none;
+              border: none;
+          }
+          &-cut:nth-child(1){
+              margin-right: 14px;
+          }
+      }
+      &-flex{
+          display: flex;
+          margin-bottom: 15px;
+          @include breakpoint(lg){
+            justify-content: space-between;
+        }
+        @include breakpoint(a){
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+      }
+      &-btn{
+          width: 90%;
+          @include breakpoint(lg){
+            width: 100%;
+            }
+          color: #fff;
+          border: 4px solid #fff;
+          padding: 24px;
+          font-size: 20px;
+          text-transform: uppercase;
+          text-align: center;
+          transition: 0.4s;
+          @include breakpoint(md){
+            font-size: 16px;
+            padding: 15px 40px;
+        }
+        @include breakpoint(b){
+            font-size: 12px;
+            padding: 15px 5px;
+        }
+        }
+      
+      &-btn:hover{
+          background-color: #fff;
+          border: 4px solid $orange;
+          color: $orange;
+
+      }
+      &-btn:hover{
+        box-shadow: 0px 10px 13px rgba(255, 94, 20, 0.1);
+      }
+      &-text{
+          color: #fff;
+          text-align: center;
+          text-transform: uppercase;
+          flex: 0 0 30%;
+          align-self: flex-end;
+        @include breakpoint(bg){
+            align-self: center;
+            flex: 0 0 100%;
+            margin-top: 30px;
+        }
+        @include breakpoint(md){
+            font-size: 24px;
+        }
+      }
+      &-text br{
+        @include breakpoint(bg){
+            display: none;
+        }
+      }
+      &-link{
+        @include breakpoint(bg){
+            color: $blue;
+            font-weight: 700;
+        }
+      }
+  }
+
+  .send-form input::placeholder{
+      color: #fff;
+      opacity: 100%;
+  }
+
+  .footer{
+      background-image: url('../img/bg-footer.jpg');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 40px 0;
+    @include breakpoint(md){
+        padding-top: 20px;
+    }
+      &-title{
+        font-size: 38px;
+        margin-top: 85px;
+        margin-bottom: 45px;
+        font-weight: 700;
+        text-align: center;
+        @include breakpoint(cl){
+            font-size: 45px;
+            line-height: 48px;
+            text-align: center;
+        }
+      }
+      &-title2{
+          text-transform: uppercase;
+          color: #fff;
+          font-size: 26px;
+          font-weight: 700;
+          text-align: left;
+          line-height: 34px;
+          margin: 38px 0;
+       
+      }
+      &-title2 br{
+        @include breakpoint(md){
+            display: none;
+        }
+      }
+      &-content{
+          display: flex;
+          justify-content: space-between;
+        @include breakpoint(cl){
+            flex-wrap: wrap;
+        }
+      }
+      &-item{
+        @include breakpoint(cl){
+            flex: 0 0 100%;
+            margin-bottom: 30px;
+        }
+          flex: 0 0 49%;
+          &-our{
+              font-weight: 700;
+              font-size: 20px;
+          }
+      }
+      &-flex2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        @include breakpoint(md){
+            flex-wrap: wrap;
+        }
+      }
+      &-flex{
+          display: flex;
+          justify-content: space-between;
+          @include breakpoint(md){
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
+      }
+      &-flex3{
+          display: flex;
+          justify-content: space-between;
+      }
+      &-inp{
+          width: 100%;
+          padding: 25px;
+          color: #fff;
+          outline: none;
+          margin-bottom: 20px;
+        @include breakpoint(a){
+            padding: 10px;
+            font-size: 16px;
+        }
+          &-cut{
+            @include breakpoint(a){
+                padding: 10px;
+                font-size: 16px;
+            }
+            @include breakpoint(md){
+                margin-bottom: 20px;
+            }
+              outline: none;
+              padding: 25px;
+              color: #fff;
+              flex: 0 0 49%;
+              @include breakpoint(md){
+                flex: 0 0 100%;
+            }
+          }
+      }
+      &-cap{
+        @include breakpoint(md){
+            height: 100px;
+            margin-top: 20px;
+        }
+      }
+      &-btn{
+        
+          flex: 0 0 49%;
+          
+          padding: 10px;
+          background-color: $orange;
+          border: none;
+          color: #fff;
+          font-size: 20px;
+          filter: drop-shadow(0px 10px 13px rgba(255, 94, 20, 0.5));
+          @include breakpoint(a){
+            padding: 0;
+            font-size: 10px;
+            flex: auto;
+            margin-left: 10px;
+        } 
+        @include breakpoint(md){
+            flex: 0 0 100%;
+            margin-left: 0;
+            padding: 25px;
+            font-size: 16px;
+        }
+      }
+      &-btn:hover{
+        filter: drop-shadow(0px 10px 13px rgba(255, 94, 20, 0.1));
+      }
+      &-link{
+          color: #fff;
+          font-weight: 700;
+          font-size: 20px;
+          margin-bottom: 25px;
+          transition: 0.4s;
+          @include breakpoint(md){
+            font-size: 16px;
+        }
+        @include breakpoint(b){
+            font-size: 16px;
+        }
+      }
+      &-link:hover{
+          color: $orange;
+          text-decoration: none;
+      }
+      &-img{
+          margin-right: 7px;
+      }
+      &-adress{
+          font-weight: 700;
+          font-size: 20px;
+          color: #fff;
+          @include breakpoint(md){
+            font-size: 16px;
+        }
+        @include breakpoint(b){
+            font-size: 16px;
+        }
+      }
+      &-adress2{
+          font-size: 16px;
+          color: #fff;
+      }
+      &-adress3{
+          font-size: 18px;
+          color: #fff;
+          @include breakpoint(md){
+            font-size: 16px;
+        }
+        @include breakpoint(b){
+            font-size: 16px;
+        }
+      }
+      &-hr{
+          border: 1px solid $blue;
+      }
+      &-copy{
+          font-size: 10px;
+          color: $blue;
+          text-align: center;
+          margin-top: 40px;
+      }
+  }
+
+  input::placeholder{
+      opacity: 100%;
+  }
+
+.modal{
+    &-title{
+        font-size: 20px;
+        font-weight: 900;
+        margin-bottom: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
