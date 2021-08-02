@@ -354,15 +354,8 @@ body{
         flex: 0 0 18%;
         text-align: center;
         @include breakpoint(md){
-            flex: 0 0 40%;
-            margin-right: 30px;
+            flex: 0 0 100%;
             margin-bottom: 30px;
-            text-align: center;
-        }
-         @include breakpoint(b){
-            flex: 0 0 90%;
-            margin-bottom: 30px;
-            margin-right: 0;
             text-align: center;
         }
         &-text{

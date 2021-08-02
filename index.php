@@ -32,7 +32,7 @@ if($_GET['mail_active'] !== '' && $_GET['mail_active'] !== NULL){
     <div class="header-click">
         <div class="header-nav none">
             <p class="header-close none">
-                <img src="img/close-1.png">
+                <img src="img/close.png">
             </p>
             <div class="container">
                 <nav class="header-flex">    
@@ -97,7 +97,26 @@ if($_GET['mail_active'] !== '' && $_GET['mail_active'] !== NULL){
             </div>
         </div>
     </header>
-    
+    <!-- <div class="copy_slide">
+        <div id='coin-slider'>
+            <a>
+              <img src='/img/bg-main-3.jpg'>
+              <div class="erer">
+                  <div class="slider-info">
+                      <p class="slider-title">Готовый<br> бизнес</p> 
+                      <p class="slider-title">Под ключ</p>
+                  </div>
+                  <p class="slider-desc">ваш реальный доход от 300.000 до 1.500.000 руб/мес </p>
+              </div>
+            </a>
+            <a>
+              <img src='/img/bg-main-1.jpg'>
+            </a>
+            <a>
+              <img src='/img/bg-main-2.jpg'>
+            </a>
+        </div>
+    </div> -->
     <div class="slider">
         <div class="slider-img slider-img-1">
             <div class="slider-info">
