@@ -503,7 +503,7 @@ a.cs-active {
   }
   .header-btn {
     font-size: 20px;
-    margin-top: 70px;
+    margin-top: 0px;
     display: block;
   }
 }
@@ -533,8 +533,16 @@ a.cs-active {
   }
 }
 
+@media (max-width: 768px) {
+  .slider-img-3 {
+    background-image: url("../img/bg-main-3b.jpg");
+    background-position: 20% center !important;
+  }
+}
+
 .slider-img-3 {
-  background-image: url("../img/bg-main-3a.jpg");
+  background-image: url("../img/bg-main-3b.jpg");
+  background-position: left center;
 }
 
 .slider-info {
@@ -729,6 +737,7 @@ slider-info-title:nth-child(2) {
 @media (max-width: 576px) {
   .one-item {
     width: 100%;
+    margin-right: 0;
   }
 }
 
@@ -2832,6 +2841,15 @@ button {
 .footer-item-our {
   font-weight: 700;
   font-size: 20px;
+  color: #fff;
+}
+
+@media (max-width: 1160px) {
+  .footer-item-our,
+  .footer-adress,
+  .footer-adress2 {
+    text-align: center;
+  }
 }
 
 .footer-flex2 {
@@ -2879,9 +2897,10 @@ button {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-@media (max-width: 480px) {
+@media (max-width: 1160px) {
   .footer-flex3 {
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -3034,7 +3053,20 @@ button {
   font-size: 18px;
   color: #fff;
 }
+.footer-adress3 span {
+  font-weight: bold;
+}
 
+@media (max-width: 1160px) {
+  .footer-adress3 {
+    width: 100%;
+    text-align: center;
+  }
+  img#licntCB20 {
+    width: 39px;
+    height: 53px;
+  }
+}
 @media (max-width: 768px) {
   .footer-adress3 {
     font-size: 16px;
@@ -3048,7 +3080,8 @@ button {
 }
 
 .footer-hr {
-  border: 1px solid #008ac6;
+  /*border: 1px solid #008ac6;*/
+  border: 1px solid #fff;
 }
 
 .footer-copy {
@@ -3168,7 +3201,7 @@ input::placeholder {
     font-size: 50px;
   }
   .header-btn {
-    margin-top: 60px;
+    /* margin-top: 60px;*/
   }
 
   .con-content {
