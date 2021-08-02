@@ -3010,10 +3010,14 @@ button {
   }
 }
 
-@media (max-width: 567px) {
+@media (max-width: 460px) {
   .footer-link {
-    width: 100%;
-    font-size: 15px !important;
+    font-size: 14px !important;
+    text-align: center;
+  }
+  .footer-link img {
+    display: block;
+    margin: auto;
   }
 }
 
@@ -3215,7 +3219,7 @@ input::placeholder {
     font-size: 13px;
   }
   .footer-link {
-    font-size: 13.5px !important;
+    font-size: 13px !important;
   }
   .form-title {
     font-size: 30px !important;
@@ -3289,7 +3293,7 @@ input::placeholder {
     line-height: 28px;
   }
   .con-bg {
-    margin-top: -25px;
+    margin-top: 10px;
   }
   .con-desc {
     font-family: PT Sans Caption;
