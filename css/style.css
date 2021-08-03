@@ -2795,11 +2795,20 @@ button {
   text-align: center;
 }
 
+.footer-title br {
+  display:none
+}
+
 @media (max-width: 1160px) {
   .footer-title {
     font-size: 45px;
     line-height: 45px;
     text-align: center;
+  }
+
+  @media (max-width: 576px) {
+    .footer-title br {
+      display:inline
   }
 }
 
@@ -3363,10 +3372,9 @@ input::placeholder {
   }
   .footer-adress2 {
     font-size: 12px;
-    font-family: Sans Caption;
+    /*font-family: Sans Caption;*/
     font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
+    font-style: normal;    
     line-height: 18px;
     letter-spacing: -3%;
     text-align: center;
