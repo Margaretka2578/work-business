@@ -195,7 +195,7 @@ a.cs-active {
 }
 
 .header-menu-item {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 567px) {
@@ -207,7 +207,7 @@ a.cs-active {
 
 .header-menu-link {
   font-size: 30px;
-  font-weight: 900;
+  /*font-weight: 900;*/
   color: #001659;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -391,6 +391,23 @@ a.cs-active {
   overflow: hidden;
 }
 
+.header-nav-bg {
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+.header-nav-inn {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  margin-top: 15px;
+}
+
 @media (max-width: 567px) {
   .header-nav {
     overflow: auto;
@@ -492,6 +509,7 @@ a.cs-active {
 .header-btn2 {
   -webkit-box-flex: 1;
   width: 33%;
+  margin-top: 20px;
   text-align: right;
 }
 
@@ -552,7 +570,7 @@ a.cs-active {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 330px;
+  margin-top: 290px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
