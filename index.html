@@ -483,10 +483,10 @@
                 <div class="send-content">
                     <form action="" method="post" class="send-form form_podp" id="send-form" onsubmit="return sendForm(this);">
                         <p class="send-form-title">ЗАКАЗАТЬ БИЗНЕС ПОД КЛЮЧ</p>
-                        <input type="text" name="name" id="name" class="send-inp" placeholder="Ваше Ф.И.О.">
+                        <input type="text" name="name" id="username" class="send-inp" placeholder="Ваше Ф.И.О.">
                         <div class="send-flex">
-                            <input type="email" class="send-inp-cut" name="mail" placeholder="Електронная почта:">
-                            <input type="tel" class="send-inp-cut" name="phone" placeholder="Номер телефона:">
+                            <input type="email" class="send-inp-cut" name="mail" id="usermail" placeholder="Электронная почта:">
+                            <input type="tel" class="send-inp-cut" name="phone" id="userphone" placeholder="Номер телефона:">
                         </div>
                         <div class="send-flex">
                             <input type="text" class="send-inp-cut" name="time" id="time_call" placeholder="Удобное время для связи:">
@@ -500,7 +500,7 @@
                         <input type="text" name="who" id="name" class="send-inp" placeholder="Кем выдан паспорт:">
                         <input type="text" name="adress" id="name" class="send-inp" placeholder="Адрес прописки:">
     
-                            <div class="g-recaptcha" data-sitekey="6LekwpYbAAAAACz0LuT4W8u8GyeRrwtY0mFL1f6-"></div>
+                         <!--   <div class="g-recaptcha" data-sitekey="6LekwpYbAAAAACz0LuT4W8u8GyeRrwtY0mFL1f6-"></div> -->
                         
                         <button type="submit" class="send-btn g-recaptcha2" name="send">Отправить данные для заключения договора</button>
                     </form>
@@ -514,7 +514,7 @@
     </div>
     <footer class="footer">
         <div class="wrapper">
-            <p class="footer-title2">Просто заполните форму обратной связи и я лично свяжусь с вами в<br> течении 72 часов.</p>
+            <p class="footer-title2">Просто заполните форму обратной связи и я лично свяжусь с вами в<br> течение 72 часов.</p>
             <div class="footer-content">
                 <div class="footer-item">
                     <form action="" method="post" class="footer-form form_footer" onsubmit="return sendForm(this);">
@@ -576,7 +576,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/slick.js"></script>
-     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
     <script src="js/main.js?v=5"></script> <!-- Resource jQuery -->
@@ -672,6 +672,7 @@ for (i = 0; i < acc.length; i++) {
   });
 }
       </script>
-  
+
+ 
 </body>
 </html>
