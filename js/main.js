@@ -1,38 +1,67 @@
 // (function() {
 	'use strict';
-  
-const widthWindow = document.documentElement.clientWidth,
-	curtainBlock = document.querySelector('div.curtain');
-var modalWrapper = curtainBlock.querySelector('.modal-wrapper'), block_but = false;
-	function trackScroll() {
-	  var scrolled = window.pageYOffset;
-	  var coords = document.documentElement.clientHeight;
-  
-	  if (scrolled > coords) {
-		goTopBtn.classList.add('back_to_top-show');
-	  }
-	  if (scrolled < coords) {
-		goTopBtn.classList.remove('back_to_top-show');
-	  }
-	}
-  
-	function backToTop() {
-	  if (window.pageYOffset > 0) {
-		window.scrollBy(0, -80);
-		setTimeout(backToTop, 0);
-	  }
-	}
-  
-	var goTopBtn = document.querySelector('.back_to_top');
-  
-	window.addEventListener('scroll', trackScroll);
-	goTopBtn.addEventListener('click', backToTop);
 
-	const time_call = $('#time_call').attr('placeholder'),
-		birthday = $('#birthday').attr('placeholder'),
-		num_passport = $('#num_passport').attr('placeholder'),
-		date_passport = $('#date_passport').attr('placeholder');
+	
+    const usermail = $("#usermail").attr('placeholder'),
+	      userphone = $("#userphone").attr('placeholder'),
+	      time_call = $('#time_call').attr('placeholder'),
+		  birthday = $('#birthday').attr('placeholder'),
+		  num_passport = $('#num_passport').attr('placeholder'),
+		  date_passport = $('#date_passport').attr('placeholder');
 
+
+	$('#username').on('keyup', function(e){
+		let text =  $(this).val(),
+			text1 = text.replace(/[^A-zА-яЁё\s]/g,''),
+			textlen = text1.length,
+			res = '';
+			for(var i = 0; i < textlen; i++) {
+				if(text1[i] !== undefined) res += text1[i];
+			}	
+		
+		$(this).val(res);
+	});	  
+
+	$('#usermail').focus(function(){
+		$(this).attr('placeholder', 'mail@sitename.com');
+	});
+	$('#usermail').blur(function(){
+		$(this).attr('placeholder', usermail);
+	});
+	$('#usermail').on('keyup', function(e){
+		let text =  $(this).val(),
+			text1 = text.replace(/[^a-z0-9-_@\.]/g,''),
+			textlen = text1.length,
+			res = '';
+			for(var i = 0; i < textlen; i++){
+		   	    if(text1[i] !== undefined) res += text1[i];
+		   }
+		$(this).val(res);
+	});
+	$('#userphone').focus(function(){
+		$(this).attr('placeholder', '+7 (XXX) XXX-XX-XX');
+	});
+	$('#userphone').blur(function(){
+		$(this).attr('placeholder', userphone);
+	});
+	$('#userphone').on('keyup', function(e){
+		let text =  $(this).val(),
+			text1 = text.replace(/[^0-9\+]/g,''),
+		//	text1 = text.replace(/[^0-9]/g,''),
+		textlen = text1.length,
+			res = '';
+			if(textlen > 12) text1 = text1.substr(0, 12);
+			if (text1[0] != '+') {
+			  res +='+7';
+			}  
+			for(var i = 0; i < textlen; i++){
+			   if(i == 2) res += ' ('; 	
+			   if(i == 5) res += ') ';
+			   if (i == 8 || i == 10) res += '-'; 
+			   if(text1[i] !== undefined) res += text1[i];
+		    }
+		$(this).val(res);
+	});
 	$('#time_call').focus(function(){
 		$(this).attr('placeholder', 'HH:ii');
 	});
@@ -89,6 +118,34 @@ var modalWrapper = curtainBlock.querySelector('.modal-wrapper'), block_but = fal
 		}
 		$(this).val(res);
 	});
+
+ 
+    const widthWindow = document.documentElement.clientWidth,
+	curtainBlock = document.querySelector('div.curtain');
+    var modalWrapper = curtainBlock.querySelector('.modal-wrapper'), block_but = false;
+	function trackScroll() {
+	  var scrolled = window.pageYOffset;
+	  var coords = document.documentElement.clientHeight;
+  
+	  if (scrolled > coords) {
+		goTopBtn.classList.add('back_to_top-show');
+	  }
+	  if (scrolled < coords) {
+		goTopBtn.classList.remove('back_to_top-show');
+	  }
+	}
+  
+	function backToTop() {
+	  if (window.pageYOffset > 0) {
+		window.scrollBy(0, -80);
+		setTimeout(backToTop, 0);
+	  }
+	}
+  
+	var goTopBtn = document.querySelector('.back_to_top');
+  
+	window.addEventListener('scroll', trackScroll);
+	goTopBtn.addEventListener('click', backToTop);
 
 
 
